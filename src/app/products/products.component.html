@@ -1,0 +1,45 @@
+<div class="card">
+  <div class="card-body">
+   <div class="p-3">
+     <input type="text" [(ngModel)]="stateService.appState.keyword">
+     <button (click)="searchProducts()" class="ms-1 btn btn-outline-success">
+       <i class="bi bi-search"></i>
+     </button>
+   </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Id</th> <th>Name</th> <th>Price</th><th>Action</th>
+        </tr>
+      </thead>
+        <tbody>
+          @for (product of stateService.appState.products ; track product.id){
+            <tr>
+              <td>{{product.id}}</td>
+              <td>{{product.name}}</td>
+              <td>{{product.price}}</td>
+              <td>
+                <button (click)="handleDelete(product)" class="ms-1 btn btn-outline-danger">
+                  <i class="bi bi-trash"></i>
+                </button>
+                <button (click)="handleUpdate(product)" class="ms-1 btn btn-outline-success">
+                  <i class="bi bi-pencil"></i>
+                </button>
+              </td>
+            </tr>
+          } @empty {
+            <td>there is no items</td>
+          }
+        </tbody>
+
+    </table>
+    <ul class="nav nav-pills">
+      @for(page of [].constructor(stateService.appState.totalPages); track $index; let i=$index){
+        <li >
+          <button (click)="goPage(i+1)" class="m-1 btn" [ngClass]="i+1==stateService.appState.currentPage?'btn-success':'btn-outline-success'">{{i+1}}</button>
+        </li>
+      }
+    </ul>
+
+  </div>
+</div>

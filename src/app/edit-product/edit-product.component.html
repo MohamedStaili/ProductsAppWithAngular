@@ -1,0 +1,19 @@
+<div class="p-3">
+  <div class="card">
+    <div class="card-body">
+      @if (formGroup) {
+        <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+          <div class="mb-3">
+            <label class="form-label">Name</label>
+            <input class="form-control" formControlName="name"/>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Price</label>
+            <input class="form-control" formControlName="price"/>
+          </div>
+          <button [disabled]="formGroup.invalid" class="btn btn-outline-success">Save</button>
+        </form>
+      }
+    </div>
+  </div>
+</div>

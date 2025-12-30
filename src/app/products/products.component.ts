@@ -37,7 +37,7 @@ export class ProductsComponent implements OnInit {
           })
         },
         error: (err)=> {
-          console.log(err);
+
         }
       })
     }
@@ -45,9 +45,9 @@ export class ProductsComponent implements OnInit {
   }
 
   searchProducts(){
-    this.stateService.setAppState({
-      status: "LOADING",
-    })
+    // this.stateService.setAppState({
+    //   status: "LOADING",
+    // })
     this.productService.searchProducts(this.stateService.appState.keyword
       ,this.stateService.appState.currentPage,
       this.stateService.appState.size).subscribe({
@@ -59,14 +59,11 @@ export class ProductsComponent implements OnInit {
           products: products,
           totalCount: totalCount,
           totalPages: totalPages,
-          status: "LOADED",
+          // status: "LOADED",
         })
       },
       error: err => {
-        this.stateService.setAppState({
-          status: "ERROR",
-          errorMessage: err
-        })
+          console.log(err);
       }
     })
   }

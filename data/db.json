@@ -24,6 +24,11 @@
       "name": "Samsung Galaxy 23",
       "price": "15000",
       "id": 5
+    },
+    {
+      "name": "zz",
+      "price": "12222",
+      "id": 6
     }
   ]
 }

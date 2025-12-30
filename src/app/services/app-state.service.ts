@@ -17,7 +17,7 @@ export class AppStateService {
   };
   constructor() { }
 
-  setAppState(state: any): void {
+  public setAppState(state: any): void {
     this.appState= {...this.appState, ...state};
   }
 }

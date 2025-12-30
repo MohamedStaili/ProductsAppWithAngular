@@ -21,5 +21,13 @@
         <!--        </button>-->
         <!--        </li>-->
         }
+    @if (loadingService.isLoading$ | async) {
+      <li>
+        <div class="ms-3 spinner-border text-primary" role="status">
+          <span class="visually-hidden"></span>
+        </div>
+      </li>
+    }
+
   </ul>
 </nav>

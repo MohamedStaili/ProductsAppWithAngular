@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {AppStateService} from '../services/app-state.service';
+import {LoadingService} from '../services/loading.service';
 
 @Component({
   selector: 'app-navbar',
@@ -13,7 +15,8 @@ export class NavbarComponent {
     {title: 'Products', route: '/products', icon: 'cart-fill'},
     {title: 'New Product', route: '/new-product', icon: 'cart-plus-fill'},
   ];
-
+  constructor(public stateService: AppStateService,public loadingService: LoadingService) {
+  }
   setCurrentAction(action: any) {
     this.currentRoute = action;
   }

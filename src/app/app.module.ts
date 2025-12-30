@@ -7,10 +7,12 @@ import { HomeComponent } from './home/home.component';
 import { ProductsComponent } from './products/products.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { NewProductComponent } from './new-product/new-product.component';
-import {provideHttpClient} from '@angular/common/http';
+import {provideHttpClient, withInterceptors} from '@angular/common/http';
 import { EditProductComponent } from './edit-product/edit-product.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { ErrorsComponent } from './errors/errors.component';
+import {appHttpInterceptor} from './app-http.interceptor';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     NewProductComponent,
     EditProductComponent,
     DashboardComponent,
-    NavbarComponent
+    NavbarComponent,
+    ErrorsComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +32,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     FormsModule,
   ],
   providers: [
-    provideHttpClient(),
+    provideHttpClient(withInterceptors([appHttpInterceptor])),
   ],
   bootstrap: [AppComponent]
 })

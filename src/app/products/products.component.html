@@ -9,7 +9,10 @@
     <table class="table">
       <thead>
         <tr>
-          <th>Id</th> <th>Name</th> <th>Price</th><th>Action</th>
+          <th>Id</th> <th>Name</th> <th>Price</th>
+          @if (stateService.authState.roles.includes("ADMIN")){
+            <th>Action</th>
+          }
         </tr>
       </thead>
         <tbody>
@@ -18,14 +21,16 @@
               <td>{{product.id}}</td>
               <td>{{product.name}}</td>
               <td>{{product.price}}</td>
-              <td>
-                <button (click)="handleDelete(product)" class="ms-1 btn btn-outline-danger">
-                  <i class="bi bi-trash"></i>
-                </button>
-                <button (click)="handleUpdate(product)" class="ms-1 btn btn-outline-success">
-                  <i class="bi bi-pencil"></i>
-                </button>
-              </td>
+              @if (stateService.authState.roles.includes("ADMIN")){
+                <td>
+                  <button (click)="handleDelete(product)" class="ms-1 btn btn-outline-danger">
+                    <i class="bi bi-trash"></i>
+                  </button>
+                  <button (click)="handleUpdate(product)" class="ms-1 btn btn-outline-success">
+                    <i class="bi bi-pencil"></i>
+                  </button>
+                </td>
+              }
             </tr>
           } @empty {
             <td>there is no items</td>

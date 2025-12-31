@@ -1,4 +1,4 @@
-<nav class="">
+<nav class="navbar">
   <ul class="nav nav-pills">
     @for (action of actions; track action.title){
       <li>
@@ -30,4 +30,21 @@
     }
 
   </ul>
+
+  <ul class="nav nav-pills">
+    @if (stateService.authState.isAuthenticated) {
+      <li>
+        {{stateService.authState.username}}
+        <button (click)="logout()" class="btn btn-outline-danger">
+          Logout
+          <i class="bi bi-box-arrow-right"></i>
+        </button>
+      </li>
+    } @else {
+      <li>
+        <button (click)="login()" class="btn btn-outline-success">Login</button>
+      </li>
+    }
+  </ul>
+
 </nav>

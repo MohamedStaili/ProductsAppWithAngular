@@ -23,7 +23,8 @@ export class NewProductComponent implements OnInit {
   onSubmit() {
     if (this.productForm.valid) {
       this.productService.saveNewProduct(this.productForm.value).subscribe({
-        next: () => {
+        next: (data) => {
+          alert(JSON.stringify(data));
           console.log("success");
         },
         error: (err) => {

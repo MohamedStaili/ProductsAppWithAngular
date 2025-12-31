@@ -29,6 +29,41 @@
       "name": "zz",
       "price": "12222",
       "id": 6
+    },
+    {
+      "name": "HP PC",
+      "price": "4000",
+      "id": 7
+    },
+    {
+      "name": "Dell 2922",
+      "price": "3000",
+      "id": 8
+    },
+    {
+      "name": "Lenovo ThinkPad",
+      "price": "4500",
+      "id": 9
+    }
+  ],
+  "users": [
+    {
+      "id": "user1",
+      "password": "MTIzNA==",
+      "roles": ["USER"],
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyMiIsIm5hbWUiOiJhZG1pbiIsInJvbGVzIjpbIlVTRVIiXSwiaWF0IjoxNTE2MjM5MDIyfQ.0_qr3mfwZOP8uKK6rsHtfkDpaSYC_dZUayguVVcoGZM"
+    },
+    {
+      "id": "user2",
+      "password": "MTIzNA==",
+      "roles": ["USER"],
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyMiIsIm5hbWUiOiJhZG1pbiIsInJvbGVzIjpbIlVTRVIiXSwiaWF0IjoxNTE2MjM5MDIyfQ.0_qr3mfwZOP8uKK6rsHtfkDpaSYC_dZUayguVVcoGZM"
+    },
+    {
+      "id": "admin",
+      "password": "MTIzNA==",
+      "roles": ["USER","ADMIN"],
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbiIsIm5hbWUiOiJhZG1pbiIsInJvbGVzIjpbIlVTRVIiLCJBRE1JTiJdLCJpYXQiOjE1MTYyMzkwMjJ9.ylWlWa2wMJtsLRvevkINXlRAi7gl6Nih6oOAn2BxJKc"
     }
   ]
 }
